@@ -1,0 +1,194 @@
+@LargeDevices: ~"only screen and (max-width: 992px)";
+@MediumDevices: ~"only screen and (max-width: 768px)";
+@SmallDevices: ~"only screen and (max-width: 480px)";
+
+@bg:linear-gradient(#f7f7f7, #fff);
+@borderStyle:#ccc solid .5px;
+
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed:700');
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700');
+
+/* GERAL */
+.wrapper {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: left;
+  font-family: 'Roboto', sans-serif;
+}
+section {
+  min-height: 250px;
+  padding: 20px 0;
+  display: table-cell;
+  width: 100%;
+}
+img {
+    max-width: 100%;
+}
+h2 {
+  font-family: 'Roboto Condensed', sans-serif;
+  font-weight: bold;
+  color: #5b5b5b;
+  @media @LargeDevices, @MediumDevices, @SmallDevices {
+  	text-align:  center;
+    font-size: 18px;
+  }
+}
+span {
+  font-weight: bold;
+}
+strong {
+    font-size: 19px;
+}
+
+/* CAROUSEL */
+.controle-thumbs-home {
+  min-height: 250px;
+  padding: 20px 0;
+  display: table;
+  > ul {
+    display: none;
+    &.active {
+      display: inline-flex;
+      @media @LargeDevices, @MediumDevices, @SmallDevices {
+      	display: inline-block;
+      }
+    }
+  }
+  @media @LargeDevices, @MediumDevices, @SmallDevices {
+    display: inline-block;
+  }
+  button {
+    background: none;
+    color: #0a0a0a;
+    padding: 7px;
+    margin: 0 5px;
+    border-right: @borderStyle;
+    border-left: @borderStyle;
+    border-top: @borderStyle;
+    border-bottom: none;
+  }
+  .controle {
+    width: 60vw;
+    text-align:  center;
+    margin: 20px 0px;
+  }
+}
+.thumbnails-home {
+  position: relative;
+  display: table-cell;
+  list-style: none;
+  list-style-type: none;
+  text-align: left;
+  margin: 0;
+  div& {
+    width: auto;
+  }
+  li {
+    position: relative;
+    display: table-cell;
+    max-width: 290px;
+    height: 530px;
+    text-align: left;
+    border: #8a8a8a4a solid 0.5px;
+    padding: 20px;
+    &:hover {
+      transition: 0.3s;
+      height: fit-content;
+      background:@bg;
+      background:-o-@bg;
+      background:-moz-@bg;
+      background:-webkit-@bg;
+      button {
+        display: table-row;
+      }
+    }
+    @media @LargeDevices, @MediumDevices, @SmallDevices {
+        display: inline-table;
+    	padding: 2%;
+    	margin: 3% 0px;
+    }
+  }
+  a {
+    text-decoration: none;
+    color: #000;
+    display: block;
+    font-weight: 400;
+    width: auto;
+    text-align: center;
+  }
+  .content {
+    min-height: 230px;
+  }
+  p {
+    text-align: left;
+    &:first-child {
+      min-height: 110px;
+    }
+  }
+  button {
+    border: none;
+    background: #fff;
+    box-sizing: border-box;
+    margin: 30px auto 0 auto;
+    padding: 5px 0;
+    overflow: hidden;
+    position: relative;
+    top: 50px;
+    border: #ccc solid 0.5px;
+    width: 100%;
+    display: none;
+    &:hover {
+      background: #fff;
+      color: #499bd5;
+      border-left: 10px #fd5c00 solid;
+      transition: 0.3s;
+    }
+    a {
+      padding: 0 15px;
+      margin: 0;
+      line-height: 35px;
+      text-decoration: none;
+      color: #000;
+      font-weight: bold !important;
+      i {
+        position: relative;
+        top: 5px;
+        margin: 0 5px;
+      }
+      &:hover {
+        i {
+          color: #fd5b00;
+        }
+      }
+    }
+  }
+  @media @LargeDevices, @MediumDevices, @SmallDevices {
+  display: inline-block;
+  width: 100% !important;
+  text-align:  center;
+}
+}
+
+/* CAROUSEL-BUTTON */
+.controle {
+  button {
+    background: none;
+    margin: 0 5px;
+    border-radius: 100%;
+    background: #ccc;
+    border: #ccc solid 0.5px;
+    width: 15px;
+    height: 15px;
+    text-indent: -999999px;
+    &:hover {
+      background: #000;
+    }
+	@media @LargeDevices, @MediumDevices, @SmallDevices {
+      margin: 0 15px;
+    }
+  }
+  @media @LargeDevices, @MediumDevices, @SmallDevices {
+  	width: 100% !important;
+  }
+}
